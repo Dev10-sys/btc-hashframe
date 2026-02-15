@@ -1,5 +1,7 @@
 # BTC HashFrame
 
+[![Live Demo](https://img.shields.io/badge/demo-live-bg?style=for-the-badge&logoColor=white&color=F7931A)](https://btc-hashframe-lkcs.vercel.app)
+
 BTC HashFrame is a security-centric, client-side Bitcoin QR encoding engine designed for air-gapped workflows. It provides a robust, production-grade interface for generating QR codes for mnemonic seed phrases, wallet descriptors, and transaction data without ever transmitting sensitive information over a network.
 
 ## Key Features
