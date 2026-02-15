@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Bitcoin Summer of Code - Dark Edition */
+  /* BTC HashFrame - Dark Edition */
   --background: oklch(0.12 0.01 250);
   --foreground: oklch(0.95 0.01 250);
   --card: oklch(0.15 0.02 250 / 0.7);

@@ -12,7 +12,7 @@ export function Logo({ className = 'w-10 h-10' }: { className?: string }) {
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        fill="url(#bsoc-gradient)"
+        fill="url(#hashframe-gradient)"
       />
       
       <rect x="16" y="16" width="4" height="4" fill="currentColor" />
@@ -27,7 +27,7 @@ export function Logo({ className = 'w-10 h-10' }: { className?: string }) {
       <rect x="28" y="28" width="4" height="4" fill="currentColor" />
       
       <defs>
-        <linearGradient id="bsoc-gradient" x1="8" y1="4" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+        <linearGradient id="hashframe-gradient" x1="8" y1="4" x2="40" y2="44" gradientUnits="userSpaceOnUse">
           <stop stopColor="#F7931A" />
           <stop offset="1" stopColor="#B66B0D" />
         </linearGradient>
