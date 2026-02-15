@@ -72,14 +72,14 @@ export function QRControls({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-[#1C1F26] border-white/10 rounded-xl">
-                <SelectItem value="png" className="text-xs font-bold text-slate-300 focus:bg-[#F7931A] focus:text-black">PNG Raster</SelectItem>
+                <SelectItem value="png" className="text-xs font-bold text-slate-300 focus:bg-[#F7931A] focus:text-black">PNG (Raster)</SelectItem>
                 <SelectItem value="svg" className="text-xs font-bold text-slate-300 focus:bg-[#F7931A] focus:text-black">SVG Vector</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div className="space-y-2">
-            <Label className="text-[11px] font-bold text-slate-300 uppercase tracking-wide ml-1">Real-time</Label>
+            <Label className="text-[11px] font-bold text-slate-300 uppercase tracking-wide ml-1">Live Preview Mode</Label>
             <div className="flex items-center justify-between h-11 px-4 bg-white/5 rounded-xl border border-white/5 ring-inset focus-within:ring-1 focus-within:ring-[#F7931A]/30 transition-all group">
               <span className={`text-[10px] font-bold uppercase transition-colors ${generationMode === 'manual' ? 'text-white' : 'text-slate-600'}`}>Manual</span>
               <Switch 

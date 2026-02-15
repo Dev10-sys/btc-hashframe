@@ -96,6 +96,7 @@ export function DescriptorModule() {
   }
 
   const descriptorType = descriptor.trim() ? getDescriptorType(descriptor) : null
+  const isValid = descriptor.trim() ? validateDescriptor(descriptor).isValid : null
 
   return (
     <div className="space-y-6">
@@ -109,7 +110,7 @@ export function DescriptorModule() {
             className="text-[10px] uppercase tracking-widest font-bold text-[#F7931A] hover:bg-[#F7931A]/10 transition-colors"
           >
             <Wand2 className="w-3 h-3 mr-2" />
-            Load Protocol Example
+            Load Example Descriptor
           </Button>
         </div>
         <div className="relative group">
@@ -119,27 +120,29 @@ export function DescriptorModule() {
             placeholder="wpkh([fingerprint/derivation]xpub.../*) or other descriptor format"
             className="font-mono text-sm bg-white/5 border-white/5 text-white min-h-[140px] rounded-2xl p-5 focus:bg-white/[0.08] focus:border-[#F7931A]/30 transition-all placeholder:text-slate-700 resize-none"
             spellCheck={false}
+            maxLength={2048}
           />
+          <div className="absolute bottom-4 right-4 flex items-center gap-3">
+             <span className="text-[10px] font-mono text-slate-600 font-bold">
+               {descriptor.length} / 2048
+             </span>
+          </div>
           {descriptorType && (
             <div className="absolute top-4 right-4 px-3 py-1 bg-[#F7931A]/20 border border-[#F7931A]/30 rounded-lg text-[9px] font-black uppercase tracking-widest text-[#F7931A] shadow-2xl backdrop-blur-md">
               {descriptorType}
             </div>
           )}
         </div>
-        <p className="text-[11px] text-slate-500 font-medium ml-1">
-          Enter an output descriptor for your wallet. Standardized cross-wallet compatibility (BIP380+).
-        </p>
-      </div>
-
-      <div className="p-5 glass-panel rounded-2xl border-white/5 bg-gradient-to-br from-[#F7931A]/5 to-transparent flex gap-4 items-start">
-        <div className="w-8 h-8 rounded-lg bg-[#F7931A]/10 flex items-center justify-center shrink-0">
-          <Info className="w-4 h-4 text-[#F7931A]" />
-        </div>
-        <div>
-          <h4 className="text-xs font-bold text-white mb-1 uppercase tracking-wider">Technical Overview</h4>
-          <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
-            Output descriptors define the derivation logic for Bitcoin addresses. They provide a standardized method for wallet recovery and cross-application interoperability.
+        
+        <div className="flex items-center justify-between ml-1">
+          <p className="text-[11px] text-slate-500 font-medium">
+            Generate QR codes from Bitcoin output descriptors for multisig and advanced wallet recovery workflows.
           </p>
+          {isValid !== null && (
+            <div className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter ${isValid ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' : 'bg-red-500/10 text-red-500 border border-red-500/20'}`}>
+              {isValid ? 'Valid Descriptor' : 'Invalid Format'}
+            </div>
+          )}
         </div>
       </div>
 
@@ -154,6 +157,18 @@ export function DescriptorModule() {
         onGenerationModeChange={setGenerationMode}
       />
 
+      <div className="p-5 glass-panel rounded-2xl border-white/5 bg-gradient-to-br from-[#F7931A]/5 to-transparent flex gap-4 items-start">
+        <div className="w-8 h-8 rounded-lg bg-[#F7931A]/10 flex items-center justify-center shrink-0">
+          <Info className="w-4 h-4 text-[#F7931A]" />
+        </div>
+        <div>
+          <h4 className="text-xs font-bold text-white mb-1 uppercase tracking-wider">Technical Overview</h4>
+          <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
+            Output descriptors define the derivation logic for Bitcoin addresses. They provide a standardized method for wallet recovery and cross-application interoperability.
+          </p>
+        </div>
+      </div>
+
       {error && (
         <Alert variant="destructive" className="bg-red-500/10 border-red-500/20 text-red-400 rounded-xl">
           <AlertDescription className="text-xs font-bold uppercase tracking-wide">{error}</AlertDescription>
@@ -164,7 +179,7 @@ export function DescriptorModule() {
         <Button
           onClick={generate}
           disabled={!descriptor.trim() || isLoading}
-          className="flex-1 h-14 bg-[#F7931A] hover:bg-[#F7931A]/90 text-black font-black text-sm uppercase tracking-widest rounded-2xl shadow-[0_0_30px_rgba(247,147,26,0.15)] hover:shadow-[0_0_40px_rgba(247,147,26,0.25)] transition-all"
+          className="flex-1 h-14 bg-[#F7931A] hover:bg-[#F7931A]/90 text-black font-black text-sm uppercase tracking-widest rounded-2xl shadow-[0_0_24px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.5)] transition-all"
         >
           {isLoading ? (
             <>
@@ -172,7 +187,7 @@ export function DescriptorModule() {
               Processing...
             </>
           ) : (
-            'Generate Protocol QR'
+            'Generate Descriptor QR'
           )}
         </Button>
         <Button 

@@ -83,9 +83,9 @@
 }
 
 .orange-glow {
-  box-shadow: 0 0 20px -5px #F7931A;
+  box-shadow: 0 0 16px rgba(247, 147, 26, 0.2);
 }
 
 .orange-glow:hover {
-  box-shadow: 0 0 30px -2px #F7931A;
+  box-shadow: 0 0 24px rgba(247, 147, 26, 0.35);
 }

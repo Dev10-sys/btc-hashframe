@@ -127,11 +127,12 @@ export function QRWorkbench() {
                   <span className="text-[10px] font-bold text-[#F7931A] uppercase tracking-widest">Active Component</span>
                 </div>
                 <h2 className="text-3xl font-black text-white mb-3 tracking-tight">
-                  {modules.find((m) => m.id === activeModule)?.label} <span className="text-[#F7931A]">Payload</span>
+                  {activeModule === 'descriptor' ? 'Wallet Descriptor' : modules.find((m) => m.id === activeModule)?.label} <span className="text-[#F7931A]">QR</span>
                 </h2>
+                <div className="h-px w-full bg-zinc-800 mb-4" />
                 <p className="text-slate-400 text-sm max-w-2xl font-medium leading-relaxed">
                   {activeModule === 'mnemonic' && 'Generate secure BIP39 seed phrase backups. Perfect for hardware wallet recovery or paper storage.'}
-                  {activeModule === 'descriptor' && 'Export and import wallet output descriptors. Essential for multisig and advanced wallet setups.'}
+                  {activeModule === 'descriptor' && 'Generate QR codes from Bitcoin output descriptors for multisig and advanced wallet recovery workflows.'}
                   {activeModule === 'transaction' && 'Construct and visualize Bitcoin transactions. Support for PSBT, Raw Hex, and Payment URIs.'}
                 </p>
               </div>
@@ -149,8 +150,8 @@ export function QRWorkbench() {
       {/* Footer */}
       <footer className="bg-[#0B0D11] border-t border-white/5 py-4 px-8 mt-auto">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50" />
             BTC HashFrame © 2026 Dev
           </div>
           <button
