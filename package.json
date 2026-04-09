@@ -1,5 +1,5 @@
 {
-  "name": "btc-hashframe",
+  "name": "btc-hashframe-lkcs",
   "version": "1.0.0",
   "description": "BTC HashFrame: Security-centric air-gapped Bitcoin QR encoding engine.",
   "private": true,

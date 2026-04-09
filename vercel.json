@@ -1,0 +1,5 @@
+{
+  "name": "btc-hashframe-lkcs",
+  "framework": "nextjs",
+  "regions": ["bom1"]
+}
