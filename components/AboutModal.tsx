@@ -17,9 +17,6 @@ export function AboutModal({ open, onOpenChange }: AboutModalProps) {
             <Logo className="w-10 h-10 text-[#F7931A]" />
             <div>
               <DialogTitle className="text-2xl font-black tracking-tight text-white mb-0.5">BTC HashFrame</DialogTitle>
-              <DialogDescription className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F7931A]">
-                Version 1.0.0 Stable
-              </DialogDescription>
             </div>
           </div>
         </DialogHeader>
@@ -51,19 +48,18 @@ export function AboutModal({ open, onOpenChange }: AboutModalProps) {
               Engine Specifications
             </h4>
             <ul className="text-[10px] text-slate-500 space-y-2 font-mono uppercase font-bold">
-              <li className="flex items-center gap-2">• Next.js 15.2.4 Core</li>
-              <li className="flex items-center gap-2">• Hardware-optimized QR Matrix</li>
-              <li className="flex items-center gap-2">• Strict Type Verification</li>
+              <li className="flex items-center gap-2">• Optimized QR Matrix</li>
+              <li className="flex items-center gap-2">• Type Verification Architecture</li>
               <li className="flex items-center gap-2">• Vector/PNG Multi-sampling</li>
             </ul>
           </div>
 
-          <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+          <div className="pt-6 border-t border-white/5 flex items-center justify-between opacity-50">
             <p className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">
-              GPL-v3 Open Core
+              BTC HashFrame
             </p>
-            <p className="text-[10px] font-bold text-[#F7931A] uppercase tracking-widest">
-              Secure Production Node
+            <p className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">
+              Production Build
             </p>
           </div>
         </div>

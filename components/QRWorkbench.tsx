@@ -55,13 +55,7 @@ export function QRWorkbench() {
             <Logo className="w-10 h-10 text-[#F7931A]" />
             <div className="flex flex-col">
               <h1 className="text-xl font-bold tracking-tight text-white leading-none">BTC HashFrame</h1>
-              <span className="text-[10px] uppercase tracking-widest text-[#F7931A] font-bold mt-1">Security-First Bitcoin QR Encoding Platform</span>
-            </div>
-            <span className="ml-2 px-2 py-0.5 text-[10px] font-mono font-bold bg-[#F7931A]/20 text-[#F7931A] rounded border border-[#F7931A]/30">v1.0.0</span>
-          </div>
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
-            <Shield className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Secure Client-Side Vault</span>
+            <span className="text-[10px] uppercase tracking-widest text-[#F7931A] font-bold mt-1">Bitcoin QR Encoding Engine</span>
           </div>
         </div>
       </header>
@@ -96,24 +90,10 @@ export function QRWorkbench() {
               </nav>
             </div>
 
-            <div className="p-5 glass-panel rounded-2xl border-white/5 bg-gradient-to-br from-white/5 to-transparent">
-              <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 text-[#F7931A] shrink-0 translate-y-0.5" />
-                <div>
-                  <p className="text-xs font-bold text-white mb-1.5 uppercase tracking-wide">Privacy First</p>
-                  <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
-                    Keys and secrets are never transmitted. All cryptographic generation is performed locally.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-[10px] text-slate-500 font-medium px-4 py-3 bg-[#1C1F26] rounded-lg border border-white/5 flex items-center justify-between">
-              <span className="uppercase tracking-wider">Shortcut</span>
-              <div className="flex gap-1 items-center">
-                <kbd className="px-1.5 py-0.5 bg-[#0B0D11] rounded border border-white/10 text-slate-300">Ctrl</kbd>
-                <span className="text-slate-600">+</span>
-                <kbd className="px-1.5 py-0.5 bg-[#0B0D11] rounded border border-white/10 text-slate-300">Enter</kbd>
+            <div className="pt-4 border-t border-white/5 opacity-50">
+              <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-lg">
+                <Shield className="w-3.5 h-3.5 text-slate-500" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Local Execution</span>
               </div>
             </div>
           </aside>
@@ -122,14 +102,10 @@ export function QRWorkbench() {
           <main className="flex-1 p-6 lg:p-10 bg-[#0B0D11]/50">
             <div className="max-w-4xl mx-auto">
               <div className="mb-8 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="h-px w-8 bg-[#F7931A]" />
-                  <span className="text-[10px] font-bold text-[#F7931A] uppercase tracking-widest">Active Component</span>
-                </div>
-                <h2 className="text-3xl font-black text-white mb-3 tracking-tight">
-                  {activeModule === 'descriptor' ? 'Wallet Descriptor' : modules.find((m) => m.id === activeModule)?.label} <span className="text-[#F7931A]">QR</span>
+
+                <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">
+                  {activeModule === 'descriptor' ? 'Wallet Descriptor' : modules.find((m) => m.id === activeModule)?.label}
                 </h2>
-                <div className="h-px w-full bg-zinc-800 mb-4" />
                 <p className="text-slate-400 text-sm max-w-2xl font-medium leading-relaxed">
                   {activeModule === 'mnemonic' && 'Generate secure BIP39 seed phrase backups. Perfect for hardware wallet recovery or paper storage.'}
                   {activeModule === 'descriptor' && 'Generate QR codes from Bitcoin output descriptors for multisig and advanced wallet recovery workflows.'}
@@ -150,18 +126,15 @@ export function QRWorkbench() {
       {/* Footer */}
       <footer className="bg-[#0B0D11] border-t border-white/5 py-4 px-8 mt-auto">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50" />
-            BTC HashFrame © 2026 Dev
+          <div className="text-xs font-medium uppercase tracking-widest text-zinc-600 flex items-center gap-2">
+            BTC HashFrame Engine
           </div>
           <button
             onClick={() => setAboutOpen(true)}
-            className="flex items-center gap-3 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-full border border-white/5 transition-all group"
+            className="flex items-center gap-3 px-4 py-2 hover:bg-white/5 rounded-full transition-all group text-zinc-500"
           >
-            <Info className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#F7931A]" />
-            <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wide">Developer Documentation</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#F7931A]" />
-          </button>
+            <Info className="w-3.5 h-3.5 group-hover:text-[#F7931A]" />
+            <span className="text-[11px] font-bold uppercase tracking-wide">About Platform</span>
         </div>
       </footer>
 
